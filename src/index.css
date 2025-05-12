@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap");
+
+:root {
+  font-family: "Reenie Beanie", cursive;
+  line-height: 1.5;
+  font-weight: 400;
+  color: rgba(90, 90, 90, 0.87);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Correção para o fundo cobrir toda a página */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(135deg, #f8f3e0 0%, #f5e8c0 50%, #f0dc9d 100%);
+  background-attachment: fixed; /* Importante para gradiente cobrir toda a altura */
+  background-repeat: no-repeat;
+}
+
+/* Se estiver usando React com create-react-app ou Vite, adicione também: */
+#root {
+  min-height: 100%;
+}
