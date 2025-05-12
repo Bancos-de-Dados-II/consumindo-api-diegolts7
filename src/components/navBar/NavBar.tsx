@@ -60,7 +60,6 @@ export default function CustomNavbar(props: Props) {
       <Box
         sx={{
           width: "100%",
-          minHeight: "100vh",
           display: "flex",
           flexDirection: "column",
           gap: "2rem",

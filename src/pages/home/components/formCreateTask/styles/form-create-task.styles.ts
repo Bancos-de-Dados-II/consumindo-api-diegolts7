@@ -64,7 +64,7 @@ const StyledCircleButton = styled(Button)<{ $bg?: string }>`
   border-radius: 50%;
   padding: 0;
   background-color: ${({ $bg }) => ($bg ? $bg : "rgba(0, 0, 0, 0.2)")};
-  transition: 0.4s ease;
+  transition: 1s ease-in-out;
 
   svg {
     color: white;

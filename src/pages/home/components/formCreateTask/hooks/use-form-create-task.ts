@@ -33,14 +33,11 @@ export const useFormCreateTask = (
     action === "VIEW_EDIT" ? "VIEW" : null
   );
 
-  const handleViewEdit = (value: "VIEW" | "EDIT" | null) => {
-    setViewEdit(value);
-  };
-
   const {
     control,
     watch,
     handleSubmit,
+    reset,
     formState: { isDirty, errors },
   } = useForm<TypeCreateTaskSchema>({
     resolver: zodResolver(createTaskSchema),
@@ -59,6 +56,13 @@ export const useFormCreateTask = (
   const mutationUpdateTask = useMutationUpdateTask(onClose);
 
   const mutationDeleteTask = useMutationDeleteTask(onClose);
+
+  const handleViewEdit = (value: "VIEW" | "EDIT" | null) => {
+    if (action === "VIEW_EDIT" && value === "VIEW" && isDirty) {
+      reset();
+    }
+    setViewEdit(value);
+  };
 
   const handleDeleteTask = () => {
     if (task && action === "VIEW_EDIT") {
